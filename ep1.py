@@ -35,11 +35,44 @@ def carregar_cenarios():
             "opcoes": {
                 "inicio": "Voltar para o saguao de entrada"
             }
-        }
+        },
+        "elevador": {
+            "titulo": "Elevador da Sorte",
+            "descricao":"Voce entrou no elevador",
+            "opcoes":{}
+        },
+        "saiu do elevador":{
+            "titulo": "Voce saiu do elevador",
+            "descricao": "Para onde voce que ir agora?",
+            "opcoes": {
+                "aquario": "Pegar missao impossivel de procurar um aquario!",
+                #" ": ""
+                }
+        },
+        "aquario": {
+            "titulo": "Unico aquario vazio",
+            "descricao": "Voce resolveu entrar no aquario mas acabou sendo teletransportado para o fumodromo",
+            "opcoes":{
+                "Ir para o fumodromo"
+                }
+        },
+        "fumodromo":{
+                }
     }
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
 
+import random
+def elevador():
+    r=random.randint(1,2)
+    subiu="PORTA ABRINDO!!!"
+    preso="Voce esta preso no elevador"
+    if r==1:
+        return subiu
+        #colocar um if para ir para o aquario ou para outro lugar
+    else:
+        return preso
+print (elevador())
 
 def main():
     print("Na hora do sufoco!")

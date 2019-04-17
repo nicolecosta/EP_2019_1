@@ -47,14 +47,14 @@ def carregar_cenarios():
             "opcoes": {
                 "aquario": "Pegar missao impossivel de procurar um aquario!",
                 #" ": ""
-                }
+            }
         },
         "aquario": {
             "titulo": "Unico aquario vazio",
             "descricao": "Voce resolveu entrar no aquario mas acabou sendo teletransportado para o fumodromo",
             "opcoes":{
                 "Ir para o fumodromo"
-                }
+            }
         },
         "fumodromo":{
             "titulo": "",
@@ -62,7 +62,7 @@ def carregar_cenarios():
             "opcoes":
                 "ficar ai mesmo",
                 "Voltar para o saguao de entrada"
-                }
+            }
         }
     }
     nome_cenario_atual = "inicio"

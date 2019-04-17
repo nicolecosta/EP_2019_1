@@ -59,7 +59,7 @@ def carregar_cenarios():
         "fumodromo":{
             "titulo": "",
             "descricao":"Voce foi jogado no fumodromo",
-            "opcoes":
+            "opcoes":{
                 "ficar ai mesmo",
                 "Voltar para o saguao de entrada"
             }

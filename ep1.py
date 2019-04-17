@@ -57,7 +57,13 @@ def carregar_cenarios():
                 }
         },
         "fumodromo":{
+            "titulo": "",
+            "descricao":"Voce foi jogado no fumodromo",
+            "opcoes":
+                "ficar ai mesmo",
+                "Voltar para o saguao de entrada"
                 }
+        }
     }
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual

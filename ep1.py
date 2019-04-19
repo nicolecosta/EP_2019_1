@@ -31,7 +31,7 @@ def carregar_cenarios():
         },
         "biblioteca": {
             "titulo": "Caverna da tranquilidade",
-            "descricao": "Voce esta na biblioteca",
+            "descricao": "Voce esta na biblioteca", #inventario multimetro
             "opcoes": {
                 "inicio": "Voltar para o saguao de entrada"
             }
@@ -42,43 +42,57 @@ def carregar_cenarios():
             "opcoes":{}
         },
         "saiu do elevador":{
-            "titulo": "Voce saiu do elevador",
+            "titulo": "Caminho",
             "descricao": "Para onde voce que ir agora?",
             "opcoes": {
-                "aquario": "Pegar missao impossivel de procurar um aquario!",
-                #" ": ""
-                }
+                "aquario": "Pegar missao impossivel de achar um aquario vazio!",
+                "fablab": "tentar colar papelao no fablab"
+            }
         },
         "aquario": {
             "titulo": "Unico aquario vazio",
             "descricao": "Voce resolveu entrar no aquario mas acabou sendo teletransportado para o fumodromo",
             "opcoes":{
                 "Ir para o fumodromo"
-                }
+            }
         },
         "fumodromo":{
-                }
+            "titulo": "",
+            "descricao":"Voce foi jogado no fumodromo",
+            "opcoes":{
+                "ficar ai mesmo",
+                "Voltar para o saguao de entrada"
+            }
+        },
+        "fablab":{
+            "titulo":"", #calca do mickey (inventario), no fablab voce pode fazer uma chave?
+            'descricao': "",
+            "opcoes": {
+                ""
+                ""              
+            }
+        }
     }
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
-
+'''
 import random
-def elevador():
-    r=random.randint(1,2)
-    subiu="PORTA ABRINDO!!!"
-    preso="Voce esta preso no elevador"
-    if r==1:
-        return subiu
-        #colocar um if para ir para o aquario ou para outro lugar
-    else:
-        return preso
-print (elevador())
+r=random.randint(1,2)
+subiu="PORTA ABRINDO!!!"
+preso="Voce esta preso no elevador"
+if r==1:
+    print (subiu)
+    #colocar um if para ir para o aquario ou para outro lugar
+else:
+    print (preso)
+
+'''
 
 def main():
     print("Na hora do sufoco!")
     print("------------------")
     print()
-    print("Parecia uma boa idéia: vou só jogar um pouquinho/assistir Netflix/"
+    print("Parecia uma boa ideia: vou só jogar um pouquinho/assistir Netflix/"
         "embaçar em geral. Amanhã eu começo o EP. Mas isso não deu certo...")
     print()
     print("É o dia de entregar o EP e você está muuuuito atrasado! Você está "
@@ -92,18 +106,20 @@ def main():
     while not game_over:
         cenario_atual = cenarios[nome_cenario_atual]
 
-        # Aluno A: substitua este comentário pelo código para imprimir 
-        # o cenário atual.
-
+        print (nome_cenario_atual)
+        print('-'*len(nome_cenario_atual))
+        for tipo,v in cenario_atual.items():
+            if tipo!="opcoes":
+                print (v)
+                print()
         opcoes = cenario_atual['opcoes']
         if len(opcoes) == 0:
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
             game_over = True
         else:
-
-            # Aluno B: substitua este comentário e a linha abaixo pelo código
-            # para pedir a escolha do usuário.
-            escolha = ""
+            for k,v in opcoes.items():
+                print ("{0}: {1}".format(k,v))
+            escolha = input("Para onde quer ir? ")
 
             if escolha in opcoes:
                 nome_cenario_atual = escolha

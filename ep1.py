@@ -241,6 +241,11 @@ def main():
         if len(opcoes) == 0:
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
             game_over = True
+        elif opcoes == "elevador":
+            ran=random.randint(1,30)
+            if ran>22:
+                print("VOCÊ ESTÁ PRESO!! O ELEVADOR QUEBROU")
+            escolha = input("ESCOLHA: ")
         else:
             for k,v in opcoes.items():
                 print ("{0}: {1}".format(k,v))

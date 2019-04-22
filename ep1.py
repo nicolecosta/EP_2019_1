@@ -40,7 +40,8 @@ def carregar_cenarios():
             "titulo": "Caverna da tranquilidade",
             "descricao": "Voce esta na biblioteca", #inventario multimetro
             "opcoes": {
-                "inicio": "Voltar para o saguao de entrada"
+                "inicio": "Voltar para o saguao de entrada",
+                "ler":  "Ler Introdução à Programação com Python"
             }
         },
         "elevador": {
@@ -135,11 +136,6 @@ def main():
                 print (v)
                 print()
         opcoes = cenario_atual['opcoes']
-        for k,v in opcoes.items():
-            print ("{0}: {1}".format(k,v))
-        escolha = input("Para onde quer ir? ")
-        if escolha=="elevador":
-            '''
             r=random.randint(1,2)
             subiu="PORTA ABRINDO!!!"
             preso="Voce esta preso no elevador"

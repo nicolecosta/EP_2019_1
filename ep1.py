@@ -358,7 +358,9 @@ def main():
             else:
                 nome_cenario_atual="cookies"
         elif escolha=="realidade virtual":
-            print ("")
+            with open('lsd.txt','r') as arquivo:
+                conteudo=arquivo.read()
+                print (conteudo)
         elif escolha in opcoes:
             nome_cenario_atual = escolha
         else:

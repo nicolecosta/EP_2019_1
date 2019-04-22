@@ -252,16 +252,18 @@ def main():
         "adiamento do EP (boa sorte...)\n")
 
     cenarios, nome_cenario_atual = carregar_cenarios()
+    nickname=input('nickname: ')
     nivel_de_energia=10
     game_over = False
     while not game_over:
         cenario_atual = cenarios[nome_cenario_atual]
 
-        print (nome_cenario_atual)
+        print(nome_cenario_atual)
         print('-'*len(nome_cenario_atual))
-        print (nivel_de_energia)
+        print("Nível de Energia: {0}".format(nivel_de_energia))
+        print("Acha bonito né, {0}".format(nickname)
         if nivel_de_energia<=2:
-            print("Sua energia está se esgotando")
+            print("{0}, sua energia está se esgotando".format(nickname))
         for tipo,v in cenario_atual.items():
             if tipo!="opcoes":
                 print (v)
@@ -290,7 +292,7 @@ def main():
                 nivel_de_energia+=1
         elif escolha=="fablab":
             if "mickey" not in inventario:
-                print("ache a calca do mickey para poder entrar no fab lab")
+                print("{0} ache a calca do mickey para poder entrar no fab lab".format(nickname))
                 nome_cenario_atual="saida do elevador"
         elif escolha=="3d":
             inventario['chave']="chave"
@@ -299,18 +301,18 @@ def main():
             inventario["carrinho de papelao"]="carrinho de papelao que nao serve para nada"
             nome_cenario_atual="fablab"
         elif escolha=="aquario":
-            print ("Voce resolveu entrar no aquario mas acabou sendo teletransportado para o fumodromo")
+            print ("Você resolveu entrar no aquário mas acabou sendo teletransportado para o fumodromo")
             nome_cenario_atual="fumodromo"
         elif escolha=="professor":
             if "chave" not in inventario:
-                print ("ache a chave para entrar na sala do professor")
+                print ("Ache a chave para entrar na sala do professor")
                 nome_cenario_atual="andar do professor"
         elif escolha=="comprar cookie":
             inventario['cookie']="cookie"
             nome_cenario_atual="1"
         elif escolha=="cookies":
             if 'cookie' not in inventario:
-                print("Voce nao tem um cookie para dar ao cookie monster, que pena!")
+                print("Você não tem um cookie para dar ao cookie monster, que pena!")
                 nivel_de_energia-=3
                 nome_cenario_atual="6"
         elif escolha in opcoes:

@@ -261,9 +261,7 @@ def main():
         print(nome_cenario_atual)
         print('-'*len(nome_cenario_atual))
         print("Nível de Energia: {0}".format(nivel_de_energia))
-<<<<<<< HEAD
         if nivel_de_energia<=2:
-=======
         print("Acha bonito né, {0}".format(nickname))
         if nivel_de_energia <= 2:
             print("{0}, sua energia está se esgotando".format(nickname))

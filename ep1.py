@@ -38,16 +38,140 @@ def carregar_cenarios():
         },
         "biblioteca": {
             "titulo": "Caverna da tranquilidade",
-            "descricao": "Voce esta na biblioteca", #inventario multimetro
+            "descricao": "Voce esta na biblioteca", 
             "opcoes": {
                 "inicio": "Voltar para o saguao de entrada",
                 "ler":  "Ler Introdução à Programação com Python"
             }
         },
+        "ler":{
+            "titulo":"Eu Devia Ter Lido Esse Livro",
+            "descricao":"Bom Agora Nem Adianta",
+            "opcoes":{
+                "inicio":"Voltar para o saguão da entrada",
+                "cochilo":"Esse sofá seria ideal para um cochilo..."
+            }
+        },
+        "cochilo":{
+            "titulo":"O sono dos universitários",
+            "descricao":"O MONSTRO DO SONO PROFUNDO TE PEGOU!!!",
+            "opcoes":{
+                "café":"Tomar café para atacar o monstro",
+                "amigos":"Tomar café com o monstro"
+            }
+        },
+        "café":{
+            "titulo":"Em busca de café",
+            "descricao":"O café te deixou hiperativo",
+            "opcoes":{
+                "escadas":"Subir correndo até o sexto andar de escada",
+                "inicio":"Voltar para o saguão e correr em círculos"
+            }
+        },
+        "amigos":{
+            "titulo":"Sempre Quis Ter um Amigo Monstro",
+            "descricao":"O monstro te abandonou e foi atrás dos estudantes de administração",
+            "opcoes":{
+                "inicio":"Voltar para o saguão",
+                "elevador":"Chamar o elevador"
+            }
+        },
         "elevador": {
             "titulo": "Elevador da Sorte",
             "descricao":"Voce entrou no elevador",
-            "opcoes":{}
+            "opcoes":{
+                "Térreo":"Ir para o térreo",
+                "1":"Ir para o primeiro andar",
+                "2":"Ir para o segundo andar",
+                "3":"Ir para o terceiro andar",
+                "4":"Ir para o quarto andar",
+                "5":"Ir para o quinto andar",
+                "6":"Ir para o sexto andar"
+            }
+        },
+        "1":{
+            "titulo":"Porta Abrindo",
+            "descricao":"Primeiro Andar",
+            "opcoes":{
+                "elevador":"Chamar o elevador"
+            }
+        },
+        "2":{
+            "titulo":"Segundo Andar",
+            "descricao":"O Andar do Escorregador",
+            "opcoes":{
+                "inicio":"Descer de escorregador até o saguão",
+                "investigar":"Ver se o Raul está escondido dentro do escorregador",
+                "elevador":"Chamar o elevador"
+            }
+        },
+        "3":{
+            "titulo":"Terceiro Andar",
+            "descricao":"Porta Abrindo",
+            "opcoes":{
+                "help desk":"Perdir help pra desk",
+                "fablab":"Talvez eu consiga fazer um clone do Raul...Isso facilitaria a minha busca",
+                "elevador":"Chame o elevador"
+            }
+        },
+        "4":{
+            "titulo":"Make 4 andar Great Again",
+            "descricao":"Quarto Andar. Porta Abrindo",
+            "opcoes":{
+                "pergunta":"perguntar para a primeira pessoa que passar se ela viu o Raul",
+                "chocolate":"Ir até a máquina comprar um M&M",
+                "elevador":"Chamar o elevador"
+            }
+        },
+        "5":{
+            "titulo":"Quinto Andar",
+            "descricao":"Labs, labs, labs",
+            "opcoes":{
+                "realidade virtual":"Ir para o laboratório de realidade virtual",
+                "supercomputação":"Ir para o laboratório de supercomputação",
+                "elevador":"chamar o elevador"
+            }
+        },
+        "6":{
+            "titulo":"Cobertura",
+            "descricao":"Espero que o Raul esteja aqui..."
+                        "Quero curtir minha Pascoa e deixar o EP só pro mês que vem.",
+            "opcoes":{
+                "sacada":"Ir para a sacada",
+                "geladeira":"Ver se tem alguma comida na geladeira",
+                "elevador":"Chamar o elevador"
+            }
+        },
+        "geladeira":{
+            "titulo":"COOKIE MONSTER",
+            "descricao":"HA HA HA vou te prender na geladeira!!!",
+            "opcoes":{
+                "arrego":"pedir socorro para os bombeiros",
+                "cookies":"alimentar o cookie monster até que ele exploda"
+            }
+        },
+        "arrego":{
+            "titulo":"NINGUÉM ESTÁ A SALVO",
+            "descricao":"O cookie monster capturou o bombeiro também",
+            "opcoes":{
+                "cookies":"alimentar o cookie monster até explodir"
+            }
+        },
+        "cookies":{
+            "titulo":"Você está dando toda a comida da geladeira para o cookie monster, ele está inflando",
+            "decsricao":"BOOM!!! O cookie monster explodiu",
+            "opcoes":{
+                "sacada":"Ir para a sacada",
+                "Chá":"Assustei depois dessa, preciso de um chazinho",
+                "elevador":"Sair desse andar"
+            }
+        },
+        "sacada":{
+            "titulo":"UAU QUE LINDO",
+            "descricao":"Talvez o Raul curta essa vista também",
+            "opcoes":{
+                ""
+            }
         },
         "saida do elevador":{
             "titulo": "Caminho",
@@ -104,15 +228,6 @@ c="chave"
 p="papelao"
 
 import random
-def sorte_elevador():
-    r=random.randint(1,3)
-    subiu="PORTA ABRINDO!!!"
-    preso="Voce esta preso no elevador"
-    if r==1 or r==3:
-        print (subiu)
-        #colocar um if para ir para o aquario ou para outro lugar
-    else:
-        print (preso)
 
 def main():
     print("Na hora do sufoco!")
@@ -136,16 +251,23 @@ def main():
                 print (v)
                 print()
         opcoes = cenario_atual['opcoes']
-            r=random.randint(1,2)
-            subiu="PORTA ABRINDO!!!"
-            preso="Voce esta preso no elevador"
-            if r==1:
-                print (subiu)
-                cenario_atual=="saida do elevador"
+        for k,v in opcoes.items():
+            print ("{0}: {1}".format(k,v))
+            escolha = input("Para onde quer ir? ")
+
+        if len(opcoes) == 0:
+            print("Acabaram-se suas opções! Mwo mwo mwooooo...")
+            game_over = True
+        elif opcoes == "elevador":
+            ran=random.randint(1,30)
+            if ran>22:
+                print("VOCÊ ESTÁ PRESO!! O ELEVADOR QUEBROU")
+                escolha = input("ESCOLHA: ")
             else:
-                print (preso)
-        '''
-            nome_cenario_atual="saida do elevador"
+                print ("PORTA ABRINDO!!!")
+                for k, v in cenarios["elevador"]["opcoes"].items():
+                    print ("{0}: {1}".format(k,v))
+                    nome_cenario_atual="saida do elevador"
         elif escolha=="fablab":
             if m not in inventario:
                 print("ache a calca do mickey para poder entrar no fab lab")

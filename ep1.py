@@ -261,7 +261,12 @@ def main():
         print(nome_cenario_atual)
         print('-'*len(nome_cenario_atual))
         print("Nível de Energia: {0}".format(nivel_de_energia))
+<<<<<<< HEAD
         if nivel_de_energia<=2:
+=======
+        print("Acha bonito né, {0}".format(nickname))
+        if nivel_de_energia <= 2:
+>>>>>>> 0bbdc908231588138d24c1acb42e924cca0075e7
             print("{0}, sua energia está se esgotando".format(nickname))
         
         for tipo,v in cenario_atual.items():
@@ -301,7 +306,7 @@ def main():
             inventario["carrinho de papelao"]="carrinho de papelao que nao serve para nada"
             nome_cenario_atual="fablab"
         elif escolha=="aquario":
-            print ("Você resolveu entrar no aquário mas acabou sendo teletransportado para o fumodromo")
+            print ("Você resolveu entrar no aquário mas acabou sendo teletransportado para uma realidade virtual")
             nome_cenario_atual="realidade virtual"
         elif escolha=="lutar":
             jogador=input("pedra, papel ou tesoura: ")
@@ -327,6 +332,9 @@ def main():
                 nome_cenario_atual="andar do professor"
         elif escolha=="comprar cookie":
             inventario['cookie']="cookie"
+            with open('cookiebia.txt','r') as arquivo:
+                conteudo=arquivo.read()
+                print (conteudo)
             nome_cenario_atual="1"
         elif escolha=="cookies":
             if 'cookie' not in inventario:

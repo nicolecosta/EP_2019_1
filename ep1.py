@@ -11,6 +11,8 @@ Created on Sat Apr 20 12:54:13 2019
 # - aluno A: Beatriz Lourenço, beatrizcpl@al.insper.edu.br
 # - aluno B: Nicole Costa, nicolesac@al.insper.edu.br
 
+import random
+
 def carregar_cenarios():
     cenarios = {
         "inicio": {
@@ -119,7 +121,7 @@ def carregar_cenarios():
             "descricao":"Quarto Andar. Porta Abrindo",
             "opcoes":{
                 "pergunta":"perguntar para a primeira pessoa que passar se ela viu o Raul",
-                "chocolate":"Ir até a máquina comprar um M&M",
+                "chocolate":"Ir até a máquina comprar um M&M (+1 energia)",
                 "elevador":"Chamar o elevador"
             }
         },
@@ -173,6 +175,14 @@ def carregar_cenarios():
                 ""
             }
         },
+        "chocolate":{
+            "titulo":"123 kcal",
+            "descricao":"HGSHGRH QUEM OUSA ROUBAR MEU M&M??",
+            "opcoes":{
+                "lutar":"lutar pelo seu chocolate",
+                "fugir":"Trocar M&M por sanduíche vegano"
+            }
+        },
         "saida do elevador":{
             "titulo": "Caminho",
             "descricao": "",
@@ -223,11 +233,13 @@ def carregar_cenarios():
     return cenarios, nome_cenario_atual
 
 inventario={}
-m="mickey"
-c="chave"
-p="papelao"
+mickey="mickey"
+chave="chave"
+papelao="papelao"
 
-import random
+nivel_de_energia=10
+
+
 
 def main():
     print("Na hora do sufoco!")
@@ -246,6 +258,9 @@ def main():
 
         print (nome_cenario_atual)
         print('-'*len(nome_cenario_atual))
+        print (nivel_de_energia)
+        if nivel_energia<=2:
+            print("Sua energia está se esgotando")
         for tipo,v in cenario_atual.items():
             if tipo!="opcoes":
                 print (v)
@@ -253,7 +268,8 @@ def main():
         opcoes = cenario_atual['opcoes']
         for k,v in opcoes.items():
             print ("{0}: {1}".format(k,v))
-            escolha = input("Para onde quer ir? ")
+            escolha = input("Qual é a sua escolha? ")
+            
 
         if len(opcoes) == 0:
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
@@ -262,12 +278,15 @@ def main():
             ran=random.randint(1,30)
             if ran>22:
                 print("VOCÊ ESTÁ PRESO!! O ELEVADOR QUEBROU")
-                escolha = input("ESCOLHA: ")
+                escolha = input("Qual é a sua escolha? ")
             else:
                 print ("PORTA ABRINDO!!!")
                 for k, v in cenarios["elevador"]["opcoes"].items():
                     print ("{0}: {1}".format(k,v))
                     nome_cenario_atual="saida do elevador"
+        elif escolha=="café":
+            if nivel_de_energia<10:
+            nivel_de_energia+=1
         elif escolha=="fablab":
             if m not in inventario:
                 print("ache a calca do mickey para poder entrar no fab lab")
@@ -280,6 +299,9 @@ def main():
         else:
             print("Sua indecisão foi sua ruína!")
             game_over = True
+            
+            
+        
 
     print("Você morreu!")
 

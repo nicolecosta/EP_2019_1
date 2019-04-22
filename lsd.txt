@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Apr 22 13:59:57 2019
+
+@author: beatriz
+"""
+
+Newspaper taxis appear on the shore
+Waiting to take you away
+Climb in the back with your head in the clouds
+And you're gone
+
+Lucy in the sky with diamonds
+Lucy in the sky with diamonds
+Lucy in the sky with diamonds
+

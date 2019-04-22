@@ -12,8 +12,6 @@ Created on Sat Apr 20 12:54:13 2019
 # - aluno B: Nicole Costa, nicolesac@al.insper.edu.br
 
 import random
-import json
-from pprint import pprint
 
 def carregar_cenarios():
     cenarios = {
@@ -264,8 +262,8 @@ def main():
         print(nome_cenario_atual)
         print('-'*len(nome_cenario_atual))
         print("Nível de Energia: {0}".format(nivel_de_energia))
-        print("Acha bonito né, {0}".format(nickname)
-        if nivel_de_energia<=2:
+        print("Acha bonito né, {0}".format(nickname))
+        if nivel_de_energia <= 2:
             print("{0}, sua energia está se esgotando".format(nickname))
         for tipo,v in cenario_atual.items():
             if tipo!="opcoes":
@@ -304,7 +302,7 @@ def main():
             inventario["carrinho de papelao"]="carrinho de papelao que nao serve para nada"
             nome_cenario_atual="fablab"
         elif escolha=="aquario":
-            print ("Você resolveu entrar no aquário mas acabou sendo teletransportado para o fumodromo")
+            print ("Você resolveu entrar no aquário mas acabou sendo teletransportado para uma realidade virtual")
             nome_cenario_atual="realidade virtual"
         elif escolha=="professor":
             if "chave" not in inventario:

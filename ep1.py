@@ -16,16 +16,17 @@ import random
 def carregar_cenarios():
     cenarios = {
         "inicio": {
-            "titulo": "Saguao do perigo",
-            "descricao": "Voce esta no saguao de entrada do insper",
+            "titulo": "Entrada do Insper",
+            "descricao": "Voce esta na entrada do Insper",
             "opcoes": {
-                "predio novo":"ir para o predio novo",
+                "predio novo":"Ir para o predio novo",
+                "seguir professor":"Seguir o professor até a sala",
                 "biblioteca": "Ir para a biblioteca"
             }
         },
-        "andar professor": {
-            "titulo": "Andar do desespero",
-            "descricao": "Voce chegou ao andar da sala do seu professor",
+        "seguir professor": {
+            "titulo": "Momento do Desespero",
+            "descricao": "Você chegou à sala do seu professor",
             "opcoes": {
                 "inicio": "Tomar o elevador para o saguao de entrada",
                 "professor": "Falar com o professor"
@@ -217,16 +218,16 @@ def carregar_cenarios():
             "titulo":"",
             "descricao":"",
             "opcoes": {
-                "aquario": "Pegar missao impossivel de achar um aquario vazio!",
-                "fablab": "tentar colar papelao no fablab"
+                "aquario": "Pegar missão mpossíel de achar um aquário vazio!",
+                "fablab": "fazer carrinho de papelão no fablab"
             }
         },
         "realidade virtual":{
             "titulo":"Lucy in the Sky with Diamonds",
             "descricao":"Voce entrou no mundo do Mario Kart!",
             "opcoes":{
-                "":""
-                "":""
+                "unicornio":"Dar uma volta de unicórnio pelos ladrilhos de arco-íris",
+                "lua":"Passear pelas crateras lunares"
             }
         }
     }
@@ -317,7 +318,6 @@ def main():
                 nome_cenario_atual="6"
         elif escolha=="realidade virtual":
             print ("")
-            nome_cenario_atual=""
         elif escolha in opcoes:
             nome_cenario_atual = escolha
         else:

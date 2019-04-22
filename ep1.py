@@ -12,6 +12,8 @@ Created on Sat Apr 20 12:54:13 2019
 # - aluno B: Nicole Costa, nicolesac@al.insper.edu.br
 
 import random
+import json
+from pprint import pprint
 
 def carregar_cenarios():
     cenarios = {
@@ -310,6 +312,9 @@ def main():
                 nome_cenario_atual="andar do professor"
         elif escolha=="comprar cookie":
             inventario['cookie']="cookie"
+            with open('cookiebia.txt','r') as arquivo:
+                conteudo=arquivo.read()
+                print (conteudo)
             nome_cenario_atual="1"
         elif escolha=="cookies":
             if 'cookie' not in inventario:

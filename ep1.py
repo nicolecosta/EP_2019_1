@@ -194,16 +194,8 @@ def carregar_cenarios():
         },
         "aquario": {
             "titulo": "Unico aquario vazio",
-            "descricao": "Voce resolveu entrar no aquario mas acabou sendo teletransportado para o fumodromo",
+            "descricao": "Voce resolveu entrar no aquario mas acabou sendo teletransportado para a realidade virtual",
             "opcoes":{}
-        },
-        "fumodromo":{
-            "titulo": "",
-            "descricao":"Voce foi jogado no fumodromo",
-            "opcoes":{
-                "fumar":"ficar ai mesmo",
-                "inicio":"Voltar para o saguao de entrada"
-            }
         },
         "fablab":{
             "titulo":"", #calca do mickey (inventario), no fablab voce pode fazer uma chave?
@@ -227,6 +219,14 @@ def carregar_cenarios():
             "opcoes": {
                 "aquario": "Pegar missao impossivel de achar um aquario vazio!",
                 "fablab": "tentar colar papelao no fablab"
+            }
+        },
+        "realidade virtual":{
+            "titulo":"Lucy in the Sky with Diamonds",
+            "descricao":"Voce entrou no mundo do Mario Kart!",
+            "opcoes":{
+                "":""
+                "":""
             }
         }
     }
@@ -302,7 +302,7 @@ def main():
             nome_cenario_atual="fablab"
         elif escolha=="aquario":
             print ("Você resolveu entrar no aquário mas acabou sendo teletransportado para o fumodromo")
-            nome_cenario_atual="fumodromo"
+            nome_cenario_atual="realidade virtual"
         elif escolha=="professor":
             if "chave" not in inventario:
                 print ("Ache a chave para entrar na sala do professor")
@@ -315,6 +315,9 @@ def main():
                 print("Você não tem um cookie para dar ao cookie monster, que pena!")
                 nivel_de_energia-=3
                 nome_cenario_atual="6"
+        elif escolha=="realidade virtual":
+            print ("")
+            nome_cenario_atual=""
         elif escolha in opcoes:
             nome_cenario_atual = escolha
         else:

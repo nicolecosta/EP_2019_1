@@ -6,7 +6,7 @@ Created on Sat Apr 20 12:54:13 2019
 @author: beatriz
 """
 # EP 2019-1: Escape Insper
-#
+
 # Alunos: 
 # - aluno A: Beatriz Lourenço, beatrizcpl@al.insper.edu.br
 # - aluno B: Nicole Costa, nicolesac@al.insper.edu.br
@@ -17,9 +17,9 @@ def carregar_cenarios():
     cenarios = {
         "inicio": {
             "titulo": "Entrada do Insper",
-            "descricao": "Voce esta na entrada do Insper",
+            "descricao": "Você está na entrada do Insper",
             "opcoes": {
-                "predio novo":"Ir para o predio novo",
+                "predio novo":"Ir para o prédio novo",
                 "seguir professor":"Seguir o professor até a sala",
             }
         },
@@ -27,16 +27,18 @@ def carregar_cenarios():
             "titulo": "Momento do Desespero",
             "descricao": "Você chegou à sala do seu professor",
             "opcoes": {
-                "inicio": "Tomar o elevador para o saguao de entrada",
+                "inicio": "Tomar o elevador para o saguão de entrada",
                 "professor": "Falar com o professor"
             }
         },
         "professor": {
             "titulo": "O monstro do Python",
-            "descricao": "Voce foi pedir para o professor adiar o EP. "
+            "descricao": "Você foi pedir para o professor adiar o EP. "
                          "O professor revelou que é um monstro disfarçado "
                          "e devorou sua alma.",
-            "opcoes": {}
+            "opcoes": {
+                "fim":"E agora?"
+            }
         },
         "biblioteca": {
             "titulo": "Caverna da tranquilidade",
@@ -184,6 +186,14 @@ def carregar_cenarios():
                 "fugir":"Trocar M&M por sanduíche vegano"
             }
         },
+        "fugir":{
+            "titulo":"Vai fugir mesmo??",
+            "descricao":"trocar o M&M por sanduíche vegano :|",
+            "opcoes":{
+                "pergunta":"perguntar para a primeira pessoa que passar se ela viu o Raul",
+                "elevador":"Chamar o elevador"
+            }
+        },
         "saida do elevador":{
             "titulo": "Caminho",
             "descricao": "",
@@ -193,8 +203,8 @@ def carregar_cenarios():
             }
         },
         "aquario": {
-            "titulo": "Unico aquario vazio",
-            "descricao": "Voce resolveu entrar no aquario mas acabou sendo teletransportado para a realidade virtual",
+            "titulo": "Único aquario vazio",
+            "descricao": "Você resolveu entrar no aquário mas acabou sendo teletransportado para o laboratório de realidade virtual",
             "opcoes":{}
         },
         "fablab":{
@@ -234,6 +244,7 @@ def carregar_cenarios():
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
 
+#objetos inventário
 inventario={}
 mickey="calca do mickey"
 chave="chave"
@@ -261,13 +272,6 @@ def main():
         print(nome_cenario_atual)
         print('-'*len(nome_cenario_atual))
         print("Nível de Energia: {0}".format(nivel_de_energia))
-<<<<<<< HEAD
-        if nivel_de_energia<=2:
-=======
-        print("Acha bonito né, {0}".format(nickname))
-        if nivel_de_energia <= 2:
->>>>>>> 0bbdc908231588138d24c1acb42e924cca0075e7
-            print("{0}, sua energia está se esgotando".format(nickname))
         
         for tipo,v in cenario_atual.items():
             if tipo!="opcoes":
@@ -278,10 +282,16 @@ def main():
             print ("{0}: {1}".format(k,v))
         escolha = input("Qual é a sua escolha? ")
             
-
+        if nivel_de_energia <= 2:
+            print("{0}, sua energia está se esgotando".format(nickname))
+            
+        if nivel_de_energia==0:
+            game_over=True
+            
         if len(opcoes) == 0:
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
             game_over = True
+            
         elif opcoes == "elevador":
             ran=random.randit(1,30)
             if ran>22:
@@ -292,59 +302,91 @@ def main():
                 for k, v in cenarios["elevador"]["opcoes"].items():
                     print ("{0}: {1}".format(k,v))
                     nome_cenario_atual="saida do elevador"
+                    
         elif escolha=="café":
             if nivel_de_energia<10:
                 nivel_de_energia+=1
+                
         elif escolha=="fablab":
             if "mickey" not in inventario:
                 print("{0} ache a calca do mickey para poder entrar no fab lab".format(nickname))
                 nome_cenario_atual="saida do elevador"
+                
+        elif escolha=="fim":
+            print("Agora pelo menos não preciso entregar meu EP!!")
+            
         elif escolha=="3d":
             inventario['chave']="chave"
             nome_cenario_atual="saida do elevador"
+            
         elif escolha=="papelao":
             inventario["carrinho de papelao"]="carrinho de papelao que nao serve para nada"
             nome_cenario_atual="fablab"
+            
         elif escolha=="aquario":
             print ("Você resolveu entrar no aquário mas acabou sendo teletransportado para uma realidade virtual")
             nome_cenario_atual="realidade virtual"
+            
+        #luta com monstro do M&M: pedra,papel,tesoura    
         elif escolha=="lutar":
+            if nivel_de_energia<=10:
+                nivel_de_energia+=1
             jogador=input("pedra, papel ou tesoura: ")
             mmonster=random.choice(['pedra','papel','tesoura'])
+            
             if jogador=='pedra' and mmonster=='tesoura':
-                print("Você consegui combater o monstro do M&M!!")
+                print("Você conseguiu combater o monstro do M&M!!-> +1pt de energia")
+                
             elif jogador=='pedra' and mmonster=='papel':
-                print("O monstro comeu você e o M&M")
+                print("O monstro comeu você e o M&M-> -1pt de energia")
+                nivel_de_energia-=2
+                
             elif jogador=='papel' and mmonster=='tesoura':
-                print("O monstro comeu você e o M&M")
+                print("O monstro comeu você e o M&M-> -1pt de energia")
+                nivel_de_energia-=2
+                
             elif jogador=='papel' and mmonster=='pedra':
-                print("Você consegui combater o monstro do M&M!!")
+                print("Você conseguiu combater o monstro do M&M!! +1pt de energia")
+                
             elif jogador=='tesoura' and mmonster=='papel':
-                print("Você consegui combater o monstro do M&M!!")
+                print("Você conseguiu combater o monstro do M&M!!-> +1pt de energia")
+                
             elif jogador=='tesoura' and mmonster=='pedra':
-                print("O monstro comeu você e o M&M")
+                print("O monstro comeu você e o M&M-> -1pt de energia")
+                nivel_de_energia-=2
+                
             elif jogador==mmonster:
-                print('EMPATE! Divida o M&M com o monstro, ele tem fome também')
-            nome_cenario_atual="4"    
+                print('EMPATE! Divida o M&M com o monstro, ele tem fome também-> +1pt de energia')
+            nome_cenario_atual="4" 
+            
+            
         elif escolha=="professor":
             if "chave" not in inventario:
                 print ("Ache a chave para entrar na sala do professor")
                 nome_cenario_atual="andar do professor"
+                
         elif escolha=="comprar cookie":
             inventario['cookie']="cookie"
             with open('cookiebia.txt','r') as arquivo:
                 conteudo=arquivo.read()
                 print (conteudo)
             nome_cenario_atual="1"
+            
         elif escolha=="cookies":
             if 'cookie' not in inventario:
                 print("Você não tem um cookie para dar ao cookie monster, que pena!")
                 nivel_de_energia-=3
                 nome_cenario_atual="6"
+                
+        elif escolha=="fuga":
+            print("Arghhh prefiria meu M&M")
+            
         elif escolha=="realidade virtual":
             print ("")
+            
         elif escolha in opcoes:
             nome_cenario_atual = escolha
+            
         else:
             print("Sua indecisão foi sua ruína!")
             game_over = True
@@ -352,13 +394,17 @@ def main():
 
              
         
+    #texto GAME OVER
+    print("G A M E    O V E R "
+          "Raul: MUAH HA HA HA HA"
+         "Parece que agora não vai ter como fugir do EP!!")
 
-    print("Você morreu!")
 
 
-
-# Programa principal.
 if __name__ == "__main__":
     print("Acha bonito né, {0}".format(nickname))
     main()
+        
+        
+#BUG sala do professor
             

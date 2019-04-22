@@ -229,6 +229,19 @@ def carregar_cenarios():
                 "unicornio":"Dar uma volta de unicórnio pelos ladrilhos de arco-íris",
                 "lua":"Passear pelas crateras lunares"
             }
+        },
+        "lua":{
+            "titulo":"",
+            "descricao":"",
+            "opcoes":{
+                "5":"Voltar para o quinto andar"
+            }
+        },
+        "unicornio":{
+            "titulo":"",
+            "descricao":"",
+            "opcoes":{
+                "5":"Voltar para o quinto andar"
         }
     }
     nome_cenario_atual = "inicio"

@@ -266,7 +266,6 @@ def main():
 =======
         print("Acha bonito né, {0}".format(nickname))
         if nivel_de_energia <= 2:
->>>>>>> 0bbdc908231588138d24c1acb42e924cca0075e7
             print("{0}, sua energia está se esgotando".format(nickname))
         
         for tipo,v in cenario_atual.items():

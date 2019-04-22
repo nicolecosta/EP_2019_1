@@ -246,7 +246,7 @@ def main():
     print("------------------\n")
     print("Parecia uma boa ideia: vou só jogar um pouquinho/assistir Netflix/"
         "embaçar em geral. Amanhã eu começo o EP. Mas isso não deu certo...\n")
-    print("É o dia de entregar o EP e você está muuuuito atrasado! Você está "
+    nivel_de_energia=10
         "na entrada do Insper, e quer procurar o professor para pedir um "
         "adiamento do EP (boa sorte...)\n")
 
@@ -275,7 +275,6 @@ def main():
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
             game_over = True
         elif opcoes == "elevador":
-            ran=random.randint(1,30)
             if ran>22:
                 print("VOCÊ ESTÁ PRESO!! O ELEVADOR QUEBROU")
                 escolha = input("Qual é a sua escolha? ")

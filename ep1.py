@@ -95,7 +95,8 @@ def carregar_cenarios():
             "titulo":"Porta Abrindo",
             "descricao":"Primeiro Andar",
             "opcoes":{
-                "elevador":"Chamar o elevador"
+                "elevador":"Chamar o elevador",
+                "comprar cookie":"Comprar um cookie"
             }
         },
         "2":{
@@ -233,11 +234,11 @@ def carregar_cenarios():
     return cenarios, nome_cenario_atual
 
 inventario={}
-mickey="mickey"
+mickey="calca do mickey"
 chave="chave"
-papelao="papelao"
+carriho_de_papelao="papelao"
+cookie="cookie"
 
-nivel_de_energia=10
 
 
 
@@ -246,12 +247,12 @@ def main():
     print("------------------\n")
     print("Parecia uma boa ideia: vou só jogar um pouquinho/assistir Netflix/"
         "embaçar em geral. Amanhã eu começo o EP. Mas isso não deu certo...\n")
-    nivel_de_energia=10
+    print("É o dia de entregar o EP e você está muuuuito atrasado! Você está "
         "na entrada do Insper, e quer procurar o professor para pedir um "
         "adiamento do EP (boa sorte...)\n")
 
     cenarios, nome_cenario_atual = carregar_cenarios()
-
+    nivel_de_energia=10
     game_over = False
     while not game_over:
         cenario_atual = cenarios[nome_cenario_atual]
@@ -259,7 +260,7 @@ def main():
         print (nome_cenario_atual)
         print('-'*len(nome_cenario_atual))
         print (nivel_de_energia)
-        if nivel_energia<=2:
+        if nivel_de_energia<=2:
             print("Sua energia está se esgotando")
         for tipo,v in cenario_atual.items():
             if tipo!="opcoes":
@@ -268,13 +269,14 @@ def main():
         opcoes = cenario_atual['opcoes']
         for k,v in opcoes.items():
             print ("{0}: {1}".format(k,v))
-            escolha = input("Qual é a sua escolha? ")
+        escolha = input("Qual é a sua escolha? ")
             
 
         if len(opcoes) == 0:
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
             game_over = True
         elif opcoes == "elevador":
+            ran=random.randit(1,30)
             if ran>22:
                 print("VOCÊ ESTÁ PRESO!! O ELEVADOR QUEBROU")
                 escolha = input("Qual é a sua escolha? ")
@@ -285,14 +287,32 @@ def main():
                     nome_cenario_atual="saida do elevador"
         elif escolha=="café":
             if nivel_de_energia<10:
-            nivel_de_energia+=1
+                nivel_de_energia+=1
         elif escolha=="fablab":
-            if m not in inventario:
+            if "mickey" not in inventario:
                 print("ache a calca do mickey para poder entrar no fab lab")
                 nome_cenario_atual="saida do elevador"
+        elif escolha=="3d":
+            inventario['chave']="chave"
+            nome_cenario_atual="saida do elevador"
+        elif escolha=="papelao":
+            inventario["carrinho de papelao"]="carrinho de papelao que nao serve para nada"
+            nome_cenario_atual="fablab"
         elif escolha=="aquario":
             print ("Voce resolveu entrar no aquario mas acabou sendo teletransportado para o fumodromo")
             nome_cenario_atual="fumodromo"
+        elif escolha=="professor":
+            if "chave" not in inventario:
+                print ("ache a chave para entrar na sala do professor")
+                nome_cenario_atual="andar do professor"
+        elif escolha=="comprar cookie":
+            inventario['cookie']="cookie"
+            nome_cenario_atual="1"
+        elif escolha=="cookies":
+            if 'cookie' not in inventario:
+                print("Voce nao tem um cookie para dar ao cookie monster, que pena!")
+                nivel_de_energia-=3
+                nome_cenario_atual="6"
         elif escolha in opcoes:
             nome_cenario_atual = escolha
         else:
@@ -309,4 +329,3 @@ def main():
 # Programa principal.
 if __name__ == "__main__":
     main()
-    

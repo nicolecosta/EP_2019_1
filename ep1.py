@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Sat Apr 20 12:54:13 2019
-
 @author: beatriz
 """
 # EP 2019-1: Escape Insper
@@ -229,6 +228,20 @@ def carregar_cenarios():
                 "unicornio":"Dar uma volta de unicórnio pelos ladrilhos de arco-íris",
                 "lua":"Passear pelas crateras lunares"
             }
+        },
+        "lua":{
+            "titulo":"",
+            "descricao":"",
+            "opcoes":{
+                "5":"Voltar para o quinto andar"
+            }
+        },
+        "unicornio":{
+            "titulo":"",
+            "descricao":"",
+            "opcoes":{
+                "5":"Voltar para o quinto andar"
+            }
         }
     }
     nome_cenario_atual = "inicio"
@@ -296,6 +309,8 @@ def main():
             if "mickey" not in inventario:
                 print("{0} ache a calca do mickey para poder entrar no fab lab".format(nickname))
                 nome_cenario_atual="saida do elevador"
+            else:
+                nome_cenario_atual="fablab"
         elif escolha=="3d":
             inventario['chave']="chave"
             nome_cenario_atual="saida do elevador"
@@ -327,6 +342,8 @@ def main():
             if "chave" not in inventario:
                 print ("Ache a chave para entrar na sala do professor")
                 nome_cenario_atual="andar do professor"
+            else:
+                nome_cenario_atual="professor"
         elif escolha=="comprar cookie":
             inventario['cookie']="cookie"
             with open('cookiebia.txt','r') as arquivo:
@@ -338,6 +355,8 @@ def main():
                 print("Você não tem um cookie para dar ao cookie monster, que pena!")
                 nivel_de_energia-=3
                 nome_cenario_atual="6"
+            else:
+                nome_cenario_atual="cookies"
         elif escolha=="realidade virtual":
             print ("")
         elif escolha in opcoes:
@@ -358,4 +377,3 @@ def main():
 if __name__ == "__main__":
     print("Acha bonito né, {0}".format(nickname))
     main()
-            

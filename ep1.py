@@ -1,12 +1,12 @@
+    
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Created on Sat Apr 20 12:54:13 2019
-
 @author: beatriz
 """
 # EP 2019-1: Escape Insper
-
+#
 # Alunos: 
 # - aluno A: Beatriz Lourenço, beatrizcpl@al.insper.edu.br
 # - aluno B: Nicole Costa, nicolesac@al.insper.edu.br
@@ -17,7 +17,7 @@ def carregar_cenarios():
     cenarios = {
         "inicio": {
             "titulo": "Entrada do Insper",
-            "descricao": "Você está na entrada do Insper",
+            "descricao": "Voce esta na entrada do Insper",
             "opcoes": {
                 "predio novo":"Ir para o prédio novo",
                 "seguir professor":"Seguir o professor até a sala",
@@ -33,16 +33,16 @@ def carregar_cenarios():
         },
         "professor": {
             "titulo": "O monstro do Python",
-            "descricao": "Você foi pedir para o professor adiar o EP. "
+            "descricao":"Você foi pedir para o professor adiar o EP. "
                          "O professor revelou que é um monstro disfarçado "
-                         "e devorou sua alma.",
+                         "e devorou sua alma.,
             "opcoes": {
                 "fim":"E agora?"
             }
         },
         "biblioteca": {
             "titulo": "Caverna da tranquilidade",
-            "descricao": "Voce esta na biblioteca", 
+            "descricao": "Você está na biblioteca", 
             "opcoes": {
                 "inicio": "Voltar para o saguao de entrada",
                 "ler":  "Ler Introdução à Programação com Python"
@@ -72,6 +72,13 @@ def carregar_cenarios():
                 "inicio":"Voltar para o saguão e correr em círculos"
             }
         },
+        "escadas":{
+            "titulo":"UHUUUUU acho que nunca andei de escada antes",
+            "descricao":"Não sei se faria isso se não tivesse tomado café":
+            "opcoes":{
+                "6":"Você chegou ao sexto andar"
+            }
+        },
         "amigos":{
             "titulo":"Sempre Quis Ter um Amigo Monstro",
             "descricao":"O monstro te abandonou e foi atrás dos estudantes de administração",
@@ -82,7 +89,7 @@ def carregar_cenarios():
         },
         "elevador": {
             "titulo": "Elevador da Sorte",
-            "descricao":"Voce entrou no elevador",
+            "descricao":"Você entrou no elevador",
             "opcoes":{
                 "inicio":"Ir para o térreo",
                 "1":"Ir para o primeiro andar",
@@ -98,7 +105,8 @@ def carregar_cenarios():
             "descricao":"Primeiro Andar",
             "opcoes":{
                 "elevador":"Chamar o elevador",
-                "comprar cookie":"Comprar um cookie"
+                "comprar cookie":"Comprar um cookie",
+                "aquario": "Tentar missão impossível de achar um aquário vazio em horário de pico!"
             }
         },
         "2":{
@@ -133,7 +141,6 @@ def carregar_cenarios():
             "descricao":"Labs, labs, labs",
             "opcoes":{
                 "realidade virtual":"Ir para o laboratório de realidade virtual",
-                "supercomputação":"Ir para o laboratório de supercomputação",
                 "elevador":"chamar o elevador"
             }
         },
@@ -144,6 +151,30 @@ def carregar_cenarios():
             "opcoes":{
                 "sacada":"Ir para a sacada",
                 "geladeira":"Ver se tem alguma comida na geladeira",
+                "elevador":"Chamar o elevador"
+            }
+        },
+        "investigar":{
+            "titulo":"BU!!",
+            "descricao":"O Raul não está aqui, ao menos você se divertiu descendo o escorregador até o térreo!",
+            "opcoes":{
+                "elevador":"Chamar o elevador"
+            }
+        },
+        "help desk":{
+            "titulo":"O help desk está fechado...",
+            "descricao":"Volte mais tarde",
+            "opcoes":{
+                "fablab":"Talvez eu consiga fazer um clone do Raul...Isso facilitaria a minha busca",
+                "elevador":"Chamar o elevador"
+            }
+        },
+        "pergunta":{
+            "titulo":"Você pergunta ao zelador se ele viu o Raul",
+            "descricao":"Acontece que não tem zelador, você deve estar delirando"
+            "Esse EP deve estar mexendo com a sua mente...",
+            "opcoes":{
+                "chocolate":"Ir até a máquina comprar um M&M (+1 energia)",
                 "elevador":"Chamar o elevador"
             }
         },
@@ -167,15 +198,23 @@ def carregar_cenarios():
             "decsricao":"BOOM!!! O cookie monster explodiu",
             "opcoes":{
                 "sacada":"Ir para a sacada",
-                "Chá":"Assustei depois dessa, preciso de um chazinho",
+                "chá":"Assustei depois dessa, preciso de um chazinho",
                 "elevador":"Sair desse andar"
             }
         },
-        "sacada":{
-            "titulo":"UAU QUE LINDO",
-            "descricao":"Talvez o Raul curta essa vista também",
+        "chá":{
+            "titulo":"Tomando cháziho da tarde",
+            "descricao":"Até parece a Rainha Elizabeth",
             "opcoes":{
-                ""
+            "sacada":"ir para a sacada",
+            "elevador":"chamar o elevador"
+            }
+        },
+        "sacada":{
+            "titulo":"UAU QUE LINDO, talvez o Raul curta essa vista também",
+            "descricao":"Porém o Raul também não está na sacada :)",
+            "opcoes":{
+                "elevador":"Entrar e chamar o elevador"
             }
         },
         "chocolate":{
@@ -187,32 +226,32 @@ def carregar_cenarios():
             }
         },
         "fugir":{
-            "titulo":"Vai fugir mesmo??",
-            "descricao":"trocar o M&M por sanduíche vegano :|",
+            "titulo":"Está fugindo do monstro como está fugindo do EP não é mesmo??",
+            "descricao":"Mas fugir nem sempre funciona...",
             "opcoes":{
                 "pergunta":"perguntar para a primeira pessoa que passar se ela viu o Raul",
                 "elevador":"Chamar o elevador"
             }
         },
-        "saida do elevador":{
-            "titulo": "Caminho",
-            "descricao": "",
-            "opcoes": {
-                "aquario": "Pegar missao impossivel de achar um aquario vazio!",
-                "fablab": "tentar colar papelao no fablab"
+        "aquario": {
+            "titulo": "Único aquário vazio",
+            "descricao": "Você resolveu entrar no aquario mas acabou sendo teletransportado para um universo paralelo"
             }
         },
-        "aquario": {
-            "titulo": "Único aquario vazio",
-            "descricao": "Você resolveu entrar no aquário mas acabou sendo teletransportado para o laboratório de realidade virtual",
-            "opcoes":{}
-        },
         "fablab":{
-            "titulo":"", #calca do mickey (inventario), no fablab voce pode fazer uma chave?
-            'descricao': "",
+            "titulo":"O famoso FABLAB",
+            'descricao': "A segunda casa dos bixos de engenharia",
             "opcoes": {
-                "papelao":"colar algumas coisas com super cola", #add inventario carrro de papelao
-                "3d":"tentar usar a impressora 3D"  #chave            
+                "papelao":"colar algumas coisas com super cola", 
+                "3D":"tentar usar a impressora 3D"              
+            }
+        },
+        "3D":{
+            "titulo":"Você acabou de entrar na faculdade e ainda não sabe mexer muito bem na impressora 3D",
+            "descricao":"Cuidado para os técnicos não te expulsarem de lá":
+            "opcoes":{
+                "chave":"Imprimir chave na impressora 3D"
+                "3":"Retornar ao terceiro andar"
             }
         },
         "predio novo":{
@@ -224,14 +263,6 @@ def carregar_cenarios():
                 "biblioteca": "Ir para a biblioteca"
             }
         },
-        "escada":{
-            "titulo":"",
-            "descricao":"",
-            "opcoes": {
-                "aquario": "Pegar missão mpossíel de achar um aquário vazio!",
-                "fablab": "fazer carrinho de papelão no fablab"
-            }
-        },
         "realidade virtual":{
             "titulo":"Lucy in the Sky with Diamonds",
             "descricao":"Voce entrou no mundo do Mario Kart!",
@@ -239,14 +270,32 @@ def carregar_cenarios():
                 "unicornio":"Dar uma volta de unicórnio pelos ladrilhos de arco-íris",
                 "lua":"Passear pelas crateras lunares"
             }
+        },
+        "lua":{
+            "titulo":"Lua de chocolate",
+            "descricao":"Você encontrou uma lua de chocolate! Pena que você é intolerante à lactose :(",
+            "opcoes":{
+                "5":"Voltar para o quinto andar"
+            }
+        },
+        "unicornio":{
+            "titulo":"Unicórnio de glitter",
+            "descricao":"Você encontrou um unicórnio e resolveu viajar pelo arco-íris com ele!",
+            "opcoes":{
+                "5":"Pena que você tem que voltar para o quinto andar e tentar adiar o EP"
+            }
+        },
+        "fim":{
+            "titulo":"Parece que chegamos ao fim não é mesmo",
+            "descricao":"E agora? Acho que ninguém sabe ainda..."
         }
     }
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
 
-#objetos inventário
+#itens do inventário
 inventario={}
-mickey="calca do mickey"
+mickey="calça do mickey"
 chave="chave"
 carriho_de_papelao="papelao"
 cookie="cookie"
@@ -273,11 +322,18 @@ def main():
         print('-'*len(nome_cenario_atual))
         print("Nível de Energia: {0}".format(nivel_de_energia))
         
+        if nivel_de_energia<=2:
+            print("Acha bonito né, {0}".format(nickname))
+        if nivel_de_energia <= 2:
+            print("{0}, sua energia está se esgotando".format(nickname))
+        
+        
         for tipo,v in cenario_atual.items():
             if tipo!="opcoes":
                 print (v)
                 print()
         opcoes = cenario_atual['opcoes']
+        
         for k,v in opcoes.items():
             print ("{0}: {1}".format(k,v))
         escolha = input("Qual é a sua escolha? ")
@@ -287,21 +343,20 @@ def main():
             
         if nivel_de_energia==0:
             game_over=True
-            
+        
         if len(opcoes) == 0:
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
             game_over = True
             
         elif opcoes == "elevador":
-            ran=random.randit(1,30)
-            if ran>22:
+            ran=random.choice([t,t,t,t,t,t,t,t,p])
+            if ran==p:
                 print("VOCÊ ESTÁ PRESO!! O ELEVADOR QUEBROU")
-                escolha = input("Qual é a sua escolha? ")
+                game_over=True
             else:
                 print ("PORTA ABRINDO!!!")
                 for k, v in cenarios["elevador"]["opcoes"].items():
                     print ("{0}: {1}".format(k,v))
-                    nome_cenario_atual="saida do elevador"
                     
         elif escolha=="café":
             if nivel_de_energia<10:
@@ -311,10 +366,9 @@ def main():
             if "mickey" not in inventario:
                 print("{0} ache a calca do mickey para poder entrar no fab lab".format(nickname))
                 nome_cenario_atual="saida do elevador"
+            else:
+                nome_cenario_atual="fablab"
                 
-        elif escolha=="fim":
-            print("Agora pelo menos não preciso entregar meu EP!!")
-            
         elif escolha=="3d":
             inventario['chave']="chave"
             nome_cenario_atual="saida do elevador"
@@ -327,43 +381,44 @@ def main():
             print ("Você resolveu entrar no aquário mas acabou sendo teletransportado para uma realidade virtual")
             nome_cenario_atual="realidade virtual"
             
-        #luta com monstro do M&M: pedra,papel,tesoura    
+        #Pedra, papel, tesoura com o monstro
         elif escolha=="lutar":
-            if nivel_de_energia<=10:
-                nivel_de_energia+=1
             jogador=input("pedra, papel ou tesoura: ")
             mmonster=random.choice(['pedra','papel','tesoura'])
-            
             if jogador=='pedra' and mmonster=='tesoura':
-                print("Você conseguiu combater o monstro do M&M!!-> +1pt de energia")
-                
+                print("Você consegui combater o monstro do M&M!!")
+                nivel_de_energia+=2
             elif jogador=='pedra' and mmonster=='papel':
-                print("O monstro comeu você e o M&M-> -1pt de energia")
+                print("O monstro comeu você e o M&M")
                 nivel_de_energia-=2
-                
             elif jogador=='papel' and mmonster=='tesoura':
-                print("O monstro comeu você e o M&M-> -1pt de energia")
+                print("O monstro comeu você e o M&M")
                 nivel_de_energia-=2
-                
             elif jogador=='papel' and mmonster=='pedra':
-                print("Você conseguiu combater o monstro do M&M!! +1pt de energia")
-                
+                print("Você consegui combater o monstro do M&M!!")
+                nivel_de_energia+=2
             elif jogador=='tesoura' and mmonster=='papel':
-                print("Você conseguiu combater o monstro do M&M!!-> +1pt de energia")
-                
+                print("Você consegui combater o monstro do M&M!!")
+                nivel_de_energia+=2
             elif jogador=='tesoura' and mmonster=='pedra':
-                print("O monstro comeu você e o M&M-> -1pt de energia")
+                print("O monstro comeu você e o M&M")
                 nivel_de_energia-=2
-                
             elif jogador==mmonster:
-                print('EMPATE! Divida o M&M com o monstro, ele tem fome também-> +1pt de energia')
-            nome_cenario_atual="4" 
+                print('EMPATE! Divida o M&M com o monstro, ele tem fome também')
+                nivel_de_energia+=2
+            nome_cenario_atual="4"    
             
             
         elif escolha=="professor":
             if "chave" not in inventario:
                 print ("Ache a chave para entrar na sala do professor")
-                nome_cenario_atual="andar do professor"
+                nome_cenario_atual="seguir professor"
+            else:
+                nome_cenario_atual="professor"
+                print("Voce foi pedir para o professor adiar o EP. ")
+                print("{0}: Raul, pode adiar o Ep por favooooooorrrrr???".format(nickname))
+                print("Raul: não.",)
+                game_over=True
                 
         elif escolha=="comprar cookie":
             inventario['cookie']="cookie"
@@ -377,15 +432,19 @@ def main():
                 print("Você não tem um cookie para dar ao cookie monster, que pena!")
                 nivel_de_energia-=3
                 nome_cenario_atual="6"
+            else:
+                nome_cenario_atual="cookies"
                 
-        elif escolha=="fuga":
-            print("Arghhh prefiria meu M&M")
-            
         elif escolha=="realidade virtual":
-            print ("")
-            
+            with open('lsd.txt','r') as arquivo:
+                conteudo=arquivo.read()
+                print (conteudo)
+                
         elif escolha in opcoes:
             nome_cenario_atual = escolha
+            
+        elif escolha=="fim":
+            game_over=True
             
         else:
             print("Sua indecisão foi sua ruína!")
@@ -394,17 +453,12 @@ def main():
 
              
         
-    #texto GAME OVER
-    print("G A M E    O V E R "
-          "Raul: MUAH HA HA HA HA"
-         "Parece que agora não vai ter como fugir do EP!!")
+    #texto do fim do jogo
+    print("G A M E    O V E R \n Raul: MUAH HA HA HA HA\n Parece que agora não vai ter como fugir do EP!!")
 
 
 
+# Programa principal.
 if __name__ == "__main__":
     print("Acha bonito né, {0}".format(nickname))
     main()
-        
-        
-#BUG sala do professor
-            

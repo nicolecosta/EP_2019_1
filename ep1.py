@@ -254,7 +254,7 @@ def carregar_cenarios():
             "descricao":"UHUUUUUU",
             "opcoes":{
                 "elevador":"subir de elevador",
-                "escada": "ser fitness e subir de escada",
+                "escadas": "ser fitness e subir de escada",
                 "biblioteca": "Ir para a biblioteca"
             }
         },

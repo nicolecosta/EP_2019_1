@@ -339,7 +339,7 @@ def main():
         elif escolha=="professor":
             if "chave" not in inventario:
                 print ("Ache a chave para entrar na sala do professor")
-                nome_cenario_atual="andar do professor"
+                nome_cenario_atual="seguir professor"
             else:
                 nome_cenario_atual="professor"
                 print("Voce foi pedir para o professor adiar o EP. ")

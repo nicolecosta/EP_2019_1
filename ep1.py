@@ -33,8 +33,12 @@ def carregar_cenarios():
         },
         "professor": {
             "titulo": "O monstro do Python",
-            "descricao":"",
-            "opcoes": {}
+            "descricao":"Você foi pedir para o professor adiar o EP."
+                         "O professor revelou que é um monstro disfarçado "
+                         "e devorou sua alma.",
+            "opcoes": {
+                "fim":"E agora?"
+            }
         },
         "biblioteca": {
             "titulo": "Caverna da tranquilidade",

@@ -1,9 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Apr 20 12:54:13 2019
-@author: beatriz
-"""
 # EP 2019-1: Escape Insper
 #
 # Alunos: 
@@ -174,7 +168,7 @@ def carregar_cenarios():
             "descricao":"Acontece que não tem zelador, você deve estar delirando"
             "Esse EP deve estar mexendo com a sua mente...",
             "opcoes":{
-                "chocolate":"Ir até a máquina comprar um M&M (+1 energia)",
+                "chocolate":"Ir até a máquina comprar um M&M (+2 energia)",
                 "elevador":"Chamar o elevador"
             }
         },
@@ -411,7 +405,7 @@ def main():
         elif escolha=="professor":
             if "chave" not in inventario:
                 print ("Faça uma chave para entrar na sala do professor")
-                nome_cenario_atual="seguir professor"
+                nome_cenario_atual="inicio"
             else:
                 nome_cenario_atual="professor"
                 print("Voce foi pedir para o professor adiar o EP. ")

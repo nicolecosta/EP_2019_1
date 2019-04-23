@@ -33,12 +33,17 @@ def carregar_cenarios():
         },
         "professor": {
             "titulo": "O monstro do Python",
+<<<<<<< HEAD
             "descricao":"Você foi pedir para o professor adiar o EP. "
                          "O professor revelou que é um monstro disfarçado "
                          "e devorou sua alma.,
             "opcoes": {
                 "fim":"E agora?"
             }
+=======
+            "descricao":"",
+            "opcoes": {}
+>>>>>>> 2707f813026ecb54515142b96fc94b4ff7f5fe04
         },
         "biblioteca": {
             "titulo": "Caverna da tranquilidade",
@@ -273,16 +278,27 @@ def carregar_cenarios():
         },
         "lua":{
             "titulo":"Lua de chocolate",
+<<<<<<< HEAD
             "descricao":"Você encontrou uma lua de chocolate! Pena que você é intolerante à lactose :(",
+=======
+            "descricao":"Voce encontrou uma lua de chocolate! Pena que vce descobriu que é intolerante à lactose :(",
+>>>>>>> 2707f813026ecb54515142b96fc94b4ff7f5fe04
             "opcoes":{
                 "5":"Voltar para o quinto andar"
             }
         },
         "unicornio":{
+<<<<<<< HEAD
             "titulo":"Unicórnio de glitter",
             "descricao":"Você encontrou um unicórnio e resolveu viajar pelo arco-íris com ele!",
             "opcoes":{
                 "5":"Pena que você tem que voltar para o quinto andar e tentar adiar o EP"
+=======
+            "titulo":"Unicornio de glitter",
+            "descricao":"Voce encontrou um unicornio e resolveu viajar pelo arco-iris com ele!",
+            "opcoes":{
+                "5":"Pena que voce tem que oltar para o quinto andar e adiar o EP"
+>>>>>>> 2707f813026ecb54515142b96fc94b4ff7f5fe04
             }
         },
         "fim":{
@@ -419,7 +435,10 @@ def main():
                 print("{0}: Raul, pode adiar o Ep por favooooooorrrrr???".format(nickname))
                 print("Raul: não.",)
                 game_over=True
+<<<<<<< HEAD
                 
+=======
+>>>>>>> 2707f813026ecb54515142b96fc94b4ff7f5fe04
         elif escolha=="comprar cookie":
             inventario['cookie']="cookie"
             with open('cookiebia.txt','r') as arquivo:

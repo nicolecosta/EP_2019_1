@@ -1,4 +1,3 @@
-    
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -12,7 +11,8 @@ Created on Sat Apr 20 12:54:13 2019
 # - aluno B: Nicole Costa, nicolesac@al.insper.edu.br
 
 import random
-
+t="t"
+p="p"
 def carregar_cenarios():
     cenarios = {
         "inicio": {
@@ -33,17 +33,8 @@ def carregar_cenarios():
         },
         "professor": {
             "titulo": "O monstro do Python",
-<<<<<<< HEAD
-            "descricao":"Você foi pedir para o professor adiar o EP. "
-                         "O professor revelou que é um monstro disfarçado "
-                         "e devorou sua alma.,
-            "opcoes": {
-                "fim":"E agora?"
-            }
-=======
             "descricao":"",
             "opcoes": {}
->>>>>>> 2707f813026ecb54515142b96fc94b4ff7f5fe04
         },
         "biblioteca": {
             "titulo": "Caverna da tranquilidade",
@@ -79,7 +70,7 @@ def carregar_cenarios():
         },
         "escadas":{
             "titulo":"UHUUUUU acho que nunca andei de escada antes",
-            "descricao":"Não sei se faria isso se não tivesse tomado café":
+            "descricao":"Não sei se faria isso se não tivesse tomado café",
             "opcoes":{
                 "6":"Você chegou ao sexto andar"
             }
@@ -241,7 +232,6 @@ def carregar_cenarios():
         "aquario": {
             "titulo": "Único aquário vazio",
             "descricao": "Você resolveu entrar no aquario mas acabou sendo teletransportado para um universo paralelo"
-            }
         },
         "fablab":{
             "titulo":"O famoso FABLAB",
@@ -253,9 +243,9 @@ def carregar_cenarios():
         },
         "3D":{
             "titulo":"Você acabou de entrar na faculdade e ainda não sabe mexer muito bem na impressora 3D",
-            "descricao":"Cuidado para os técnicos não te expulsarem de lá":
+            "descricao":"Cuidado para os técnicos não te expulsarem de lá",
             "opcoes":{
-                "chave":"Imprimir chave na impressora 3D"
+                "chave":"Imprimir chave na impressora 3D",
                 "3":"Retornar ao terceiro andar"
             }
         },
@@ -278,27 +268,16 @@ def carregar_cenarios():
         },
         "lua":{
             "titulo":"Lua de chocolate",
-<<<<<<< HEAD
-            "descricao":"Você encontrou uma lua de chocolate! Pena que você é intolerante à lactose :(",
-=======
             "descricao":"Voce encontrou uma lua de chocolate! Pena que vce descobriu que é intolerante à lactose :(",
->>>>>>> 2707f813026ecb54515142b96fc94b4ff7f5fe04
             "opcoes":{
                 "5":"Voltar para o quinto andar"
             }
         },
         "unicornio":{
-<<<<<<< HEAD
-            "titulo":"Unicórnio de glitter",
-            "descricao":"Você encontrou um unicórnio e resolveu viajar pelo arco-íris com ele!",
-            "opcoes":{
-                "5":"Pena que você tem que voltar para o quinto andar e tentar adiar o EP"
-=======
             "titulo":"Unicornio de glitter",
             "descricao":"Voce encontrou um unicornio e resolveu viajar pelo arco-iris com ele!",
             "opcoes":{
                 "5":"Pena que voce tem que oltar para o quinto andar e adiar o EP"
->>>>>>> 2707f813026ecb54515142b96fc94b4ff7f5fe04
             }
         },
         "fim":{
@@ -381,13 +360,13 @@ def main():
         elif escolha=="fablab":
             if "mickey" not in inventario:
                 print("{0} ache a calca do mickey para poder entrar no fab lab".format(nickname))
-                nome_cenario_atual="saida do elevador"
+                nome_cenario_atual="elevador"
             else:
                 nome_cenario_atual="fablab"
                 
         elif escolha=="3d":
             inventario['chave']="chave"
-            nome_cenario_atual="saida do elevador"
+            nome_cenario_atual="elevador"
             
         elif escolha=="papelao":
             inventario["carrinho de papelao"]="carrinho de papelao que nao serve para nada"
@@ -427,7 +406,7 @@ def main():
             
         elif escolha=="professor":
             if "chave" not in inventario:
-                print ("Ache a chave para entrar na sala do professor")
+                print ("Faça uma chave para entrar na sala do professor")
                 nome_cenario_atual="seguir professor"
             else:
                 nome_cenario_atual="professor"
@@ -435,10 +414,6 @@ def main():
                 print("{0}: Raul, pode adiar o Ep por favooooooorrrrr???".format(nickname))
                 print("Raul: não.",)
                 game_over=True
-<<<<<<< HEAD
-                
-=======
->>>>>>> 2707f813026ecb54515142b96fc94b4ff7f5fe04
         elif escolha=="comprar cookie":
             inventario['cookie']="cookie"
             with open('cookiebia.txt','r') as arquivo:

@@ -32,9 +32,7 @@ def carregar_cenarios():
         },
         "professor": {
             "titulo": "O monstro do Python",
-            "descricao": "Voce foi pedir para o professor adiar o EP. "
-                         "O professor revelou que é um monstro disfarçado "
-                         "e devorou sua alma.",
+            "descricao":"",
             "opcoes": {}
         },
         "biblioteca": {
@@ -230,17 +228,17 @@ def carregar_cenarios():
             }
         },
         "lua":{
-            "titulo":"",
-            "descricao":"",
+            "titulo":"Lua de chocolate",
+            "descricao":"Voce encontrou uma lua de chocolate! Pena que vce descobriu que é intolerante à lactose :(",
             "opcoes":{
                 "5":"Voltar para o quinto andar"
             }
         },
         "unicornio":{
-            "titulo":"",
-            "descricao":"",
+            "titulo":"Unicornio de glitter",
+            "descricao":"Voce encontrou um unicornio e resolveu viajar pelo arco-iris com ele!",
             "opcoes":{
-                "5":"Voltar para o quinto andar"
+                "5":"Pena que voce tem que oltar para o quinto andar e adiar o EP"
             }
         }
     }
@@ -275,7 +273,7 @@ def main():
         print('-'*len(nome_cenario_atual))
         print("Nível de Energia: {0}".format(nivel_de_energia))
         if nivel_de_energia<=2:
-        print("Acha bonito né, {0}".format(nickname))
+            print("Acha bonito né, {0}".format(nickname))
         if nivel_de_energia <= 2:
             print("{0}, sua energia está se esgotando".format(nickname))
         
@@ -344,6 +342,10 @@ def main():
                 nome_cenario_atual="andar do professor"
             else:
                 nome_cenario_atual="professor"
+                print("Voce foi pedir para o professor adiar o EP. ")
+                print("{0}: Raul, pode adiar o Ep por favooooooorrrrr???".format(nickname))
+                print("Raul: não.",)
+                game_over=True
         elif escolha=="comprar cookie":
             inventario['cookie']="cookie"
             with open('cookiebia.txt','r') as arquivo:
